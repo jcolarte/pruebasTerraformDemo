@@ -1,6 +1,15 @@
+# Archivos de estado e historial local de Terraform
 .terraform/
+.terraform.lock.hcl
 *.tfstate
 *.tfstate.*
 crash.log
+
+# Variables confidenciales y configuraciones locales
 *.tfvars
-!example.tfvars
+!terraform.tfvars.example
+
+# IDEs y Sistema Operativo
+.DS_Store
+.idea/
+.vscode/
