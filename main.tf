@@ -14,7 +14,7 @@ resource "azurerm_key_vault" "kv" {
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   sku_name                    = "standard"
   
-  enable_rbac_authorization   = false # Best practice: RBAC en lugar de Access Policies
+  enable_rbac_authorization   = true # Best practice: RBAC en lugar de Access Policies
   purge_protection_enabled    = false # Habilitar en PRD
 
   tags                        = var.tags
