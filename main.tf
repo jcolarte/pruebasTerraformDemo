@@ -37,6 +37,15 @@ resource "azurerm_storage_account" "func_sa" {
   tags                     = var.tags
 }
 
+resource "azurerm_storage_account" "func_stga" {
+  name                     = "stga${var.project_prefix}func${var.env}"
+  resource_group_name      = data.azurerm_resource_group.dev_rg.name
+  location                 = data.azurerm_resource_group.dev_rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  tags                     = var.tags
+}
+
 # 5. App Service Plan (Consumption Plan para Linux)
 resource "azurerm_service_plan" "func_plan" {
   name                = "asp-${var.project_prefix}-func-${var.env}"
